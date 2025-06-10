@@ -1,0 +1,11 @@
+JOB ADAPTATION ENGINE:
+- 50 Hardest AI Jobs: Adaptation started top-down
+- 100 AI-Dominant Jobs: Training bottom-up
+- All other jobs: Parallel adaptation activated
+
+STRUCTURE PER JOB:
+- Voice Command Set
+- Required Tools & Simulations
+- Use Case Logic
+- Memory Tags for Growth
+- Financial Impact Score (if applicable)

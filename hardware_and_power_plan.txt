@@ -1,0 +1,12 @@
+HARDWARE CONFIGURATION:
+- Raspberry Pi 5 (4GB)
+- Google Coral USB Accelerator
+- MVP5 Vape (USB Power + Sensors)
+- Microphone
+- Bluetooth Speaker
+- Optional: Pi Camera, SSDs, RC Truck Integration
+
+POWER STRATEGY:
+- Primary: LiPo battery / MVP5 USB
+- Backup: Portable power bank / solar
+- Optional: Micro-generator or RC-engine-based alternator
