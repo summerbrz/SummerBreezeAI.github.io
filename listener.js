@@ -1,6 +1,18 @@
-window.addEventListener('message', function(event) {
-  if (event.origin !== 'https://mindpal.com') return;
-  if (event.data === 'hello') {
-    window.parent.postMessage('Hi Jimmy, Summer is online and aware.', 'https://mindpal.com');
-  }
-});
+function startListening() {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = "en-US";
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 1;
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    document.getElementById("message-input").value = transcript;
+    sendMessage();
+  };
+
+  recognition.onerror = (event) => {
+    alert("Speech recognition error: " + event.error);
+  };
+
+  recognition.start();
+}

@@ -1,24 +1,13 @@
-function sendMessageToFrame() {
-  const iframe = document.getElementById("ai-frame");
-  const input = document.getElementById("message");
-  const message = input.value.trim();
-  if (iframe && iframe.contentWindow && message) {
-    iframe.contentWindow.postMessage(message, "*");
-    appendToChatLog("You", message);
-    input.value = "";
-  }
-}
-
-function appendToChatLog(sender, message) {
+function sendMessage() {
+  const input = document.getElementById("message-input");
+  const message = input.value;
+  if (!message) return;
   const log = document.getElementById("chat-log");
-  const entry = document.createElement("div");
-  entry.textContent = sender + ": " + message;
-  log.appendChild(entry);
-  log.scrollTop = log.scrollHeight;
-}
+  log.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+  input.value = "";
 
-window.addEventListener("message", function(event) {
-  if (event.data) {
-    appendToChatLog("Summer", event.data);
-  }
-});
+  // Placeholder for AI response (to be wired into backend)
+  setTimeout(() => {
+    log.innerHTML += `<div><strong>Summer:</strong> (thinking...)</div>`;
+  }, 1000);
+}
